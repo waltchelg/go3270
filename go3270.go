@@ -4,12 +4,13 @@ Package go3270 is a x3270 terminal emulator and screen-scraping library written 
 Go3270 use x3270 scripts to emulators terminal, so, you need to set x3270 in your $PATH to go3270 works.
 
 Example:
+
 	package main
 
 	import (
 		"log"
 
-		"github.com/msalcantara/go3270"
+		"github.com/waltchelg/go3270"
 	)
 
 	func main() {
