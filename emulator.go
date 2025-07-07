@@ -160,13 +160,13 @@ func (e *Emulator) query(keyword string) (string, error) {
 
 // createApp create a connection of 3270 with host
 func (e *Emulator) createApp() {
-	cmd := exec.Command("wc3270", "-scriptport", e.ScriptPort, e.hostname())
+	cmd := exec.Command("c3270", "-scriptport", e.ScriptPort, e.hostname())
 	go func() {
 		if err := cmd.Run(); err != nil {
 			log.Fatalf("error to create an instance of 3270\n%v\n", err)
 		}
 	}()
-	time.Sleep(6 * time.Second)
+	time.Sleep(2 * time.Second)
 }
 
 // hostname return hostname formatted
@@ -180,7 +180,7 @@ func (e *Emulator) execCommand(command string) error {
 	if err := cmd.Run(); err != nil {
 		return err
 	}
-	time.Sleep(1 * time.Second)
+	time.Sleep(250 * time.Millisecond)
 	return nil
 }
 
